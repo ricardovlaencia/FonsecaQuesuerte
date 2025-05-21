@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reproductor de Música</title>
+</head>
+<body style="text-align: center; padding-top: 50px;">
+
+  <h1>🎶 Que Suerte Es Tenerte 🎶</h1>
+
+  <audio id="bg-music" loop preload="auto">
+    <source src="Quesuerte.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <button onclick="toggleMusic()" style="padding: 10px 20px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 8px;">
+    ▶️ Activar música
+  </button>
+
+  <script>
+    function toggleMusic() {
+      const music = document.getElementById("bg-music");
+      if (music.paused) {
+        music.play().catch(err => alert("No se pudo reproducir: " + err.message));
+      } else {
+        music.pause();
+      }
+    }
+  </script>
+
+</body>
+</html>
